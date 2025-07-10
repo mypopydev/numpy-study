@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 
 # Chapter 2 Beginning with NumPy fundamentals
@@ -19,18 +18,18 @@ print(np.int8(42.0))
 #Out: 42
 
 print("In: bool(42)")
-print(np.bool(42))
+print(bool(42))
 #Out: True
-print(np.bool(0))
+print(bool(0))
 
 print("In: bool(42.0)")
-print(np.bool(42.0))
+print(bool(42.0))
 #Out: True
 
 print("In: float(True)")
-print(np.float(True))
+print(float(True))
 #Out: 1.0
-print(np.float(False))
+print(float(False))
 
 print("In: arange(7, dtype=uint16)")
 print(np.arange(7, dtype=np.uint16))
@@ -39,7 +38,7 @@ print(np.arange(7, dtype=np.uint16))
 
 print("In: int(42.0 + 1.j)")
 try:
-   print(np.int(42.0 + 1.j))
+   print(int(42.0 + 1.j))
 except TypeError:
    print("TypeError")
 #Type error

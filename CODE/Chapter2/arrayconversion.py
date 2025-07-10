@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 
 # Chapter 2 Beginning with NumPy fundamentals
@@ -17,13 +16,13 @@ print("In: b.tolist()")
 print(b.tolist())
 #Out: [(1+1j), (3+2j)]
 
-print("In: b.tostring()")
-print(b.tostring())
+print("In: b.tobytes()")
+print(b.tobytes())
 #Out: '\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x08@\x00\x00\x00\x00\x00\x00\x00@'
 
-print("In: fromstring('\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x08@\x00\x00\x00\x00\x00\x00\x00@', dtype=complex)")
-print(np.fromstring('\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x08@\x00\x00\x00\x00\x00\x00\x00@', dtype=complex))
-#Out: array([ 1.+1.j,  3.+2.j]
+print("In: frombuffer(b.tobytes(), dtype=complex)")
+print(np.frombuffer(b.tobytes(), dtype=complex))
+#Out: array([ 1.+1.j,  3.+2.j])
 
 print("In: fromstring('20:42:52',sep=':', dtype=int)")
 print(np.fromstring('20:42:52',sep=':', dtype=int))

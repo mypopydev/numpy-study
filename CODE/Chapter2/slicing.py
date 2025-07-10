@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 
 # Chapter 2 Beginning with NumPy fundamentals
