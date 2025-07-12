@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 from datetime import datetime
 
@@ -10,7 +9,9 @@ from datetime import datetime
 # Saturday 5
 # Sunday 6
 def datestr2num(s):
-   return datetime.strptime(s, "%d-%m-%Y").date().weekday()
+   if isinstance(s, bytes):
+      s = s.decode('utf-8')
+   return datetime.strptime(s.strip(), "%d-%m-%Y").weekday()
 
 dates, close=np.loadtxt('data.csv', delimiter=',', usecols=(1,6), converters={1: datestr2num}, unpack=True)
 print("Dates =", dates)

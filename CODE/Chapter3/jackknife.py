@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 
 c = np.loadtxt('data.csv', delimiter=',', usecols=(6,), unpack=True)
@@ -6,7 +5,7 @@ c = np.loadtxt('data.csv', delimiter=',', usecols=(6,), unpack=True)
 # Initialize estimates array
 estimates = np.zeros((len(c), 3))
 
-for i in xrange(len(c)):
+for i in range(len(c)):
    # Create a temporary copy and omit one value
    a = c.copy()
    a[i] = np.nan

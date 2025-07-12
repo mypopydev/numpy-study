@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 
 c=np.loadtxt('data.csv', delimiter=',', usecols=(6,), unpack=True)
