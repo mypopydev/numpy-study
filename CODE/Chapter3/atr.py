@@ -5,15 +5,14 @@ h, l, c = np.loadtxt('data.csv', delimiter=',', usecols=(4, 5, 6), unpack=True)
 N = 5
 h = h[-N:]
 l = l[-N:]
-
 print("len(h)", len(h), "len(l)", len(l))
 print("Close", c)
-previousclose = c[-N -1: -1]
 
+previousclose = c[-N-1:-1]
 print("len(previousclose)", len(previousclose))
 print("Previous close", previousclose)
-truerange = np.maximum(h - l, h - previousclose, previousclose - l) 
 
+truerange = np.maximum(h - l, h - previousclose, previousclose - l)
 print("True range", truerange)
 
 atr = np.zeros(N)
