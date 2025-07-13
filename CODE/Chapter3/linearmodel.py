@@ -3,9 +3,9 @@ import numpy as np
 N = 5
 
 c = np.loadtxt('data.csv', delimiter=',', usecols=(6,), unpack=True)
-
 b = c[-N:]
 b = b[::-1]
+
 print("b", b)
 
 A = np.zeros((N, N), float)
@@ -17,8 +17,7 @@ for i in range(N):
 print("A", A)
 
 
-(x, residuals, rank, s) = np.linalg.lstsq(A, b)
+(x, residuals, rank, s) = np.linalg.lstsq(A, b, rcond=None)
 
 print(x, residuals, rank, s)
-
 print(np.dot(b, x))
