@@ -11,5 +11,4 @@ print("Compressed", a.compress(a > 2))
 b = np.arange(1, 9)
 print("b =", b)
 print("Factorial", b.prod())
-
 print("Factorials", b.cumprod())
