@@ -1,5 +1,3 @@
-from __future__ import print_function
-from __future__ import division
 import numpy as np
 
 a = np.array([2, 6, 5])
