@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 
 A = np.mat("4 11 14;8 7 -2")

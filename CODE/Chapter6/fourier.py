@@ -1,7 +1,5 @@
-from __future__ import print_function
 import numpy as np
 import matplotlib.pyplot as plt
-
 
 x =  np.linspace(0, 2 * np.pi, 30)
 wave = np.cos(x)
