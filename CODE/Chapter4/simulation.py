@@ -1,4 +1,3 @@
-from __future__ import print_function
 import numpy as np
 
 o, h, l, c = np.loadtxt('BHP.csv', delimiter=',', usecols=(3, 4, 5, 6), unpack=True)
