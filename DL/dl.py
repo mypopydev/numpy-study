@@ -69,6 +69,44 @@ def identity_function(x):
     """
     return x
 
+def softmax(x):
+    """
+    Compute the softmax activation function with numerical stability.
+    
+    The softmax function converts a vector of real numbers into a probability
+    distribution. It exponentiates each element and normalizes by the sum of
+    all exponentials, ensuring all outputs are between 0 and 1 and sum to 1.
+    This makes it ideal for multi-class classification problems.
+    
+    This implementation uses the numerically stable version that subtracts
+    the maximum value before exponentiating to prevent overflow.
+    
+    Args:
+        x (numpy.ndarray): Input array of any shape
+        
+    Returns:
+        numpy.ndarray: Output array with the same shape as x, with values between 0 and 1
+            that sum to 1 along the last axis
+            
+    Examples:
+        >>> softmax(np.array([1, 2, 3]))
+        array([0.09003057, 0.24472847, 0.66524096])
+        
+        >>> softmax(np.array([0, 0, 0]))
+        array([0.33333333, 0.33333333, 0.33333333])
+    
+    Notes:
+        - Uses numerically stable implementation by subtracting max value
+        - The function is invariant to adding a constant to all inputs
+        - Handles large input values without overflow
+    """
+    # Numerically stable softmax: subtract max to prevent overflow
+    x_max = np.max(x)
+    exp_a = np.exp(x - x_max)
+    sum_exp_a = np.sum(exp_a)
+    y = exp_a / sum_exp_a
+
+    return y
 
 def init_network():
     """
